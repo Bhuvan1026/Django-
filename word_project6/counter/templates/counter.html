@@ -1,0 +1,25 @@
+{% if i %}
+<div class="mb-2" style="border-style: groove; border-radius: 10px;">
+  <div class="card-header">
+    <p style="font-size: 20px;">{{ word }} Word{{ word|pluralize }} in the text</p>
+  </div>
+</div>
+{% endif %}
+
+<div class="col-12 pb-3" style="background-color: #c2d6d6; border: 2px groove; border-radius: 10px;">
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="text1">Paste your text here</label>
+      <textarea name="texttocount" id="text1" rows="8" style="background-color: #f0f5f5;" class="form-control" placeholder="Enter text to count words">{{ text }}</textarea>
+    </div>
+    
+    <div class="text-center">
+      <!-- Ads or other content can go here -->
+    </div>
+
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-primary w-25">Run Counter</button>
+    </div>
+  </form>
+</div>
